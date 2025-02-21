@@ -176,7 +176,7 @@ class YouTube:
 
     def reconnect(self, delay):
         if self.fetch_job and self.fetch_job.running():
-            if not fetch_job.cancel():
+            if not self.fetch_job.cancel():
                 print("Waiting for fetch job to finish...")
                 self.fetch_job.result()
         print(f"Retrying in {delay}...")
